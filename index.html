@@ -15,8 +15,8 @@
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
+            color: #e0e0e0;
+            background-color: #1a1a1a;
         }
         .welcome-screen {
             position: fixed;
@@ -24,7 +24,7 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: linear-gradient(to right, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(to right, #2c3e50 0%, #bdc3c7 100%);
             color: white;
             display: flex;
             justify-content: center;
@@ -42,7 +42,7 @@
             100% { opacity: 0; transform: translateY(-100px); }
         }
         .home {
-            background: linear-gradient(to right, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(to right, #2c3e50 0%, #bdc3c7 100%);
             color: white;
             padding: 100px 20px;
             text-align: center;
@@ -66,6 +66,9 @@
             font-size: 24px;
             font-weight: 600;
         }
+        .navbar {
+            display: flex;
+        }
         .navbar a {
             color: white;
             margin: 0 15px;
@@ -83,12 +86,38 @@
             font-size: 1.2rem;
             margin-bottom: 30px;
         }
-        .hero-content img {
+        .hero-content .image-container {
+            position: relative;
             width: 150px;
             height: 150px;
-            border-radius: 50%;
-            margin-bottom: 20px;
+            margin: 0 auto 20px auto;
             border: 5px solid white;
+            cursor: pointer;
+        }
+        .hero-content .image-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #34495e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            text-align: center;
+            transition: opacity 0.5s ease;
+        }
+        .hero-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .hero-content img.revealed {
+            opacity: 1;
         }
         section {
             padding: 80px 20px;
@@ -99,52 +128,45 @@
             font-size: 2.5rem;
             margin-bottom: 20px;
             text-align: center;
-            color: #333;
+            color: #bdc3c7;
         }
         .tentang, .pendidikan, .keterampilan, .kontak {
-            background: white;
+            background: #2c3e50;
             margin-bottom: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
             padding: 40px;
+            color: #e0e0e0;
         }
         .tentang p {
             font-size: 1.1rem;
             text-align: center;
+        }
+        .details {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+        .icon {
+            font-size: 1.5rem;
         }
         .pendidikan ul, .keterampilan ul {
             list-style: none;
             padding: 0;
         }
         .pendidikan li, .keterampilan li {
-            background: #f9f9f9;
+            background: #34495e;
             margin: 10px 0;
             padding: 15px;
-            border-left: 5px solid #667eea;
-        }
-        .kontak form {
-            display: flex;
-            flex-direction: column;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .kontak input, .kontak textarea {
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .kontak button {
-            padding: 10px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .kontak button:hover {
-            background: #5a67d8;
+            border-left: 5px solid #bdc3c7;
+            color: #e0e0e0;
         }
         footer {
             background: #333;
@@ -152,25 +174,112 @@
             text-align: center;
             padding: 20px;
         }
+        /* Tablet */
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            .hero-content img {
+                width: 120px;
+                height: 120px;
+            }
+            section h2 {
+                font-size: 2.2rem;
+            }
+            .tentang, .pendidikan, .keterampilan, .kontak {
+                padding: 30px;
+            }
+        }
+        /* Mobile */
         @media (max-width: 768px) {
             .topbar {
                 flex-direction: column;
+                padding: 10px;
+            }
+            .navbar {
+                flex-wrap: wrap;
+                justify-content: center;
             }
             .navbar a {
-                margin: 5px 0;
+                margin: 5px 10px;
+                font-size: 14px;
             }
             .hero-content h1 {
                 font-size: 2rem;
             }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .hero-content img {
+                width: 100px;
+                height: 100px;
+            }
             section {
                 padding: 60px 10px;
+            }
+            section h2 {
+                font-size: 2rem;
+            }
+            .tentang, .pendidikan, .keterampilan, .kontak {
+                padding: 20px;
+            }
+            .tentang p {
+                font-size: 1rem;
+            }
+            .details {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .pendidikan li, .keterampilan li {
+                padding: 10px;
+            }
+        }
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            .welcome-screen h1 {
+                font-size: 2.5rem;
+            }
+            .logo {
+                font-size: 18px;
+            }
+            .navbar a {
+                margin: 5px;
+                font-size: 12px;
+            }
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+            .hero-content img {
+                width: 80px;
+                height: 80px;
+            }
+            section h2 {
+                font-size: 1.8rem;
+            }
+            .tentang, .pendidikan, .keterampilan, .kontak {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            .pendidikan li, .keterampilan li {
+                padding: 8px;
+                font-size: 14px;
+            }
+            footer {
+                padding: 15px;
+                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
     <!-- Welcome Screen -->
-    <div class="welcome-screen">
+    <div class="welcome-screen" id="welcome-screen">
         <h1>Welcome</h1>
     </div>
 
@@ -186,7 +295,10 @@
             </div>
         </div>
         <div class="hero-content">
-            <img src="img/photo.jpg" alt="Foto Profil Fansuri Putra Raja Jakarta">
+            <div class="image-container">
+                <div class="image-placeholder">Tekan di sini</div>
+                <img src="foto funsuri.jpeg" alt="Foto Profil Fansuri Putra Raja Jakarta">
+            </div>
             <h1>Selamat Datang di Biodata Saya</h1>
             <p>Halo, saya Fansuri Putra Raja Jakarta. Mari kenali lebih lanjut tentang saya!</p>
         </div>
@@ -196,7 +308,20 @@
     <section id="tentang" class="tentang">
         <h2>Tentang Saya</h2>
         <p>Saya adalah mahasiswa yang antusias dalam bidang teknologi dan desain. Saya suka belajar hal baru, terutama dalam pengembangan web dan kreativitas digital. Di waktu luang, saya menikmati membaca buku dan berolahraga.</p>
-        <p><strong>Umur:</strong> 18 tahun<br><strong>Lokasi:</strong> Jakarta, Indonesia<br><strong>Hobi:</strong> Coding, Fotografi, Musik</p>
+        <div class="details">
+            <div class="detail-item">
+                <span class="icon">🎂</span>
+                <strong>Umur:</strong> 18 tahun
+            </div>
+            <div class="detail-item">
+                <span class="icon">📍</span>
+                <strong>Lokasi:</strong> Jakarta, Indonesia
+            </div>
+            <div class="detail-item">
+                <span class="icon">🎨</span>
+                <strong>Hobi:</strong> Coding, Fotografi, Musik
+            </div>
+        </div>
     </section>
 
     <!-- Pendidikan -->
@@ -222,13 +347,12 @@
     <!-- Kontak -->
     <section id="kontak" class="kontak">
         <h2>Kontak</h2>
-        <form action="#" method="post">
-            <input type="text" name="nama" placeholder="Nama Anda" required>
-            <input type="email" name="email" placeholder="Email Anda" required>
-            <textarea name="pesan" placeholder="Pesan Anda" rows="5" required></textarea>
-            <button type="submit">Kirim Pesan</button>
-        </form>
-        <p>Email: fansuri@example.com | Telepon: +62 812-3456-7890</p>
+        <p>Ikuti saya di:</p>
+        <ul>
+            <li><a href="https://www.instagram.com/fansuri_raja?igsh=MWlqMHpiaHM4NDZidw==" target="_blank">Instagram</a></li>
+            <li><a href="https://youtube.com/@fansuriraja?si=v68B24B1az9a6K25" target="_blank">YouTube</a></li>
+            <li><a href="https://www.tiktok.com/@leax_want?_r=1&_t=ZS-91JTlrd1nDM" target="_blank">TikTok</a></li>
+        </ul>
     </section>
 
     <!-- Footer -->
@@ -237,6 +361,27 @@
     </footer>
 
     <script>
+        // Remove welcome screen after animation ends
+        const welcomeScreen = document.getElementById('welcome-screen');
+        welcomeScreen.addEventListener('animationend', () => {
+            welcomeScreen.remove();
+        });
+
+        // Function to reveal image on hover or touch
+        const img = document.querySelector('.hero-content .image-container img');
+        img.addEventListener('mouseenter', () => {
+            img.classList.add('revealed');
+        });
+        img.addEventListener('mouseleave', () => {
+            img.classList.remove('revealed');
+        });
+        img.addEventListener('touchstart', () => {
+            img.classList.add('revealed');
+        });
+        img.addEventListener('touchend', () => {
+            img.classList.remove('revealed');
+        });
+
         // Simple script to highlight active navbar link on scroll
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
