@@ -2,7 +2,7 @@
 <html lang="id" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8" />
-    <title>Biodata Fansuri Putra Raja Jakarta</title>
+    <title>Landing Page Fansuri Putra Raja Jakarta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -86,6 +86,20 @@
             font-size: 1.2rem;
             margin-bottom: 30px;
         }
+        .cta-button {
+            display: inline-block;
+            background: #ffd700;
+            color: #2c3e50;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .cta-button:hover {
+            background: #e6c200;
+        }
         .hero-content .image-container {
             width: 150px;
             height: 150px;
@@ -108,7 +122,7 @@
             text-align: center;
             color: #bdc3c7;
         }
-        .tentang, .pendidikan, .keterampilan, .kontak {
+        .tentang, .portofolio, .layanan, .kontak {
             background: #2c3e50;
             margin-bottom: 20px;
             border-radius: 10px;
@@ -167,7 +181,7 @@
             section h2 {
                 font-size: 2.2rem;
             }
-            .tentang, .pendidikan, .keterampilan, .kontak {
+            .tentang, .portofolio, .layanan, .kontak {
                 padding: 30px;
             }
         }
@@ -201,7 +215,7 @@
             section h2 {
                 font-size: 2rem;
             }
-            .tentang, .pendidikan, .keterampilan, .kontak {
+            .tentang, .portofolio, .layanan, .kontak {
                 padding: 20px;
             }
             .tentang p {
@@ -240,7 +254,7 @@
             section h2 {
                 font-size: 1.8rem;
             }
-            .tentang, .pendidikan, .keterampilan, .kontak {
+            .tentang, .portofolio, .layanan, .kontak {
                 padding: 15px;
                 margin-bottom: 15px;
             }
@@ -267,8 +281,8 @@
             <div class="logo">Fansuri Putra Raja Jakarta</div>
             <div class="navbar">
                 <a href="#tentang">Tentang</a>
-                <a href="#pendidikan">Pendidikan</a>
-                <a href="#keterampilan">Keterampilan</a>
+                <a href="#portofolio">Portofolio</a>
+                <a href="#layanan">Layanan</a>
                 <a href="#kontak">Kontak</a>
             </div>
         </div>
@@ -276,8 +290,9 @@
             <div class="image-container">
                 <img src="web ulangan/foto funsuri.jpeg" alt="Foto Profil Fansuri Putra Raja Jakarta">
             </div>
-            <h1>Selamat Datang di Biodata Saya</h1>
-            <p>Halo, saya Fansuri Putra Raja Jakarta. Mari kenali lebih lanjut tentang saya!</p>
+            <h1>Fansuri Putra Raja Jakarta - Web Developer & Designer</h1>
+            <p>Saya adalah mahasiswa yang antusias dalam pengembangan web dan desain grafis. Mari lihat portofolio saya dan hubungi saya untuk proyek menarik!</p>
+            <a href="#portofolio" class="cta-button">Lihat Portofolio</a>
         </div>
     </div>
 
@@ -301,23 +316,27 @@
         </div>
     </section>
 
-    <!-- Pendidikan -->
-    <section id="pendidikan" class="pendidikan">
-        <h2>Pendidikan</h2>
+    <!-- Portofolio -->
+    <section id="portofolio" class="portofolio">
+        <h2>Portofolio</h2>
+        <p>Berikut adalah beberapa proyek yang telah saya kerjakan:</p>
         <ul>
-            <li><strong>SDN 01</strong> - Lulusan</li>
-            <li><strong>SMPN 193</strong> - Lulusan</li>
-            <li><strong>SMK Global Cendekia</strong> (TKJ) - Kelas 3</li>
+            <li><a href="abdol/index.html" target="_blank">Abdol - Website Personal</a></li>
+            <li><a href="moonwalk/index.html" target="_blank">Moonwalk - Website Animasi</a></li>
+            <li><a href="mutiara/index.html" target="_blank">Mutiara - Website Portofolio</a></li>
+            <li><a href="web/fansuri.html" target="_blank">Fansuri - Halaman Web</a></li>
+            <li><a href="web faradul/index.html" target="_blank">Web Faradul - Website Kreatif</a></li>
         </ul>
     </section>
 
-    <!-- Keterampilan -->
-    <section id="keterampilan" class="keterampilan">
-        <h2>Keterampilan</h2>
+    <!-- Layanan -->
+    <section id="layanan" class="layanan">
+        <h2>Layanan</h2>
+        <p>Saya menawarkan layanan berikut:</p>
         <ul>
-            <li>Desain Grafis - Mahir</li>
-            <li>HTML dan CSS - Mahir</li>
-            <li>Office - Menengah</li>
+            <li>Desain Grafis - Membuat desain visual yang menarik</li>
+            <li>Pengembangan Web - Membangun website responsif dengan HTML, CSS, dan JavaScript</li>
+            <li>Konsultasi Teknologi - Bantuan dalam proyek digital</li>
         </ul>
     </section>
 
