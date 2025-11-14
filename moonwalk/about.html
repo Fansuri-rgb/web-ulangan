@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Praktek Company Profile</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <Header>
+        <a href="#" class="logo">GOTKJ</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="contack.html">Contact</a></li>
+        </ul>
+    </Header>
+    <section>
+        <img src="stars.png" id="stars">
+        <img src="moon.png" id="moon">
+        <img src="mountains_behind.png" id="mountains_behind">
+        <h2 id="text">GO TKJ</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Tentang Kami</h2>
+        <p> GOTKJ didirikan pada tahun 2010 dengan visi untuk menyediakan solusi inovatif dan andal di bidang teknologi komputer. Selama bertahun-tahun, kami telah berkembang menjadi mitra terpercaya untuk bisnis dari berbagai ukuran, memberikan nilai luar biasa melalui berbagai layanan kami.<br><br>
+
+            Misi Kami: Memberdayakan klien kami dengan solusi komputer yang efektif dan layanan tak tertandingi.<br><br>
+            Visi Kami: Menjadi penyedia solusi teknologi komputer inovatif dan andal terkemuka di industri.<br><br>
+            Nilai-Nilai Kami: Integritas, Keunggulan, Inovasi, Berorientasi pada Pelanggan.<br><br></p>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.margintop = value * 1.5 + 'px';
+            btn.style.margintop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Praktek Company Profile</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <Header>
+        <a href="#" class="logo">GOTKJ</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html" class="active">Work</a></li>
+            <li><a href="contack.html">Contact</a></li>
+        </ul>
+    </Header>
+    <section>
+        <img src="stars.png" id="stars">
+        <img src="moon.png" id="moon">
+        <img src="mountains_behind.png" id="mountains_behind">
+        <h2 id="text">GO TKJ</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Pekerjaan Kami</h2>
+        <p> Di GOTKJ, kami bangga akan kualitas dan dampak dari pekerjaan kami. Portofolio kami menampilkan berbagai proyek yang menunjukkan keahlian dan komitmen kami terhadap keunggulan.<br><br>
+
+            Layanan yang Kami Tawarkan<br><br>
+            Perbaikan dan Pemeliharaan Komputer: Kami menyediakan layanan perbaikan dan pemeliharaan komputer yang memastikan sistem Anda berjalan dengan optimal.
+            Pengembangan Perangkat Lunak: Kami menawarkan layanan pengembangan perangkat lunak yang disesuaikan dengan kebutuhan bisnis Anda, mulai dari aplikasi desktop hingga sistem perusahaan.
+            Keamanan Jaringan: Kami menyediakan solusi keamanan jaringan untuk melindungi data dan sistem Anda dari ancaman siber.<br><br>
+            Studi Kasus<br><br>
+            Proyek Peningkatan Jaringan Perusahaan: Kami membantu sebuah perusahaan multinasional untuk meningkatkan infrastruktur jaringan mereka, meningkatkan kecepatan dan keamanan.
+            Pengembangan Sistem Manajemen Inventaris: Untuk perusahaan ritel, kami mengembangkan sistem manajemen inventaris yang membantu mengurangi biaya operasional dan meningkatkan efisiensi.
+            Audit Keamanan IT: Kami melakukan audit keamanan IT untuk sebuah lembaga pendidikan, mengidentifikasi kerentanan, dan menerapkan solusi mitigasi.<br><br>
+        </p>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.margintop = value * 1.5 + 'px';
+            btn.style.margintop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
